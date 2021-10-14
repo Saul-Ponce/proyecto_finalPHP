@@ -103,12 +103,13 @@
                     <div class="modal-body mx-auto">
 
                         <form name="formulario_registro" id="formulario_registro">
-                            <input type="hidden" name="ingreso_datos" value="si_registro">
+                            <input type="hidden" id="ingreso_datos" name="ingreso_datos" value="si_registro">
+                            <input type="hidden" id="llave_clasificacion_lista" name="llave_clasificacion_lista" value="si_registro">
                             <div class="row">
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">Nombre</label>
                                         <div class="col-sm-10">
-                                        <input type="text" autocomplete="off" name="nombre" id="nombre" class="form-control ml-2" required placeholder="Ingrese su nombre"/>
+                                        <input type="text" autocomplete="off" name="nombre" data-parsley-required-message="El nombre es requerido" id="nombre" class="form-control ml-2" required placeholder="Ingrese su nombre"/>
                                         </div>
                                     </div>
                             </div>

@@ -1,8 +1,51 @@
 $(function (){
-
+    $('#formulario_registro').parsley();
     cargar_datos();
 
-    $(".select2").select2();
+    $(document).on("click",".btn_eliminar",function(e){
+        e.preventDefault();
+        var id = $(this).attr("data-id");
+        var datos = {"eliminar_clasificacion_lista":"si_eliminala","id":id}
+        $.ajax({
+            dataType: "json",
+            method: "POST",
+            url:'json_clasificacion_lista.php',
+            data : datos,
+        }).done(function(json) {
+            cargar_datos();
+
+        });
+    });
+    $(document).on("click",".btn_editar",function(e){
+
+        e.preventDefault();
+        var id = $(this).attr("data-id");
+        console.log("El id es: ",id);
+        var datos = {"consultar_info":"si_consultala","id":id}
+        $.ajax({
+            dataType: "json",
+            method: "POST",
+            url:'json_clasificacion_lista.php',
+            data : datos,
+        }).done(function(json) {
+            console.log("EL consultar especifico",json);
+            if (json[0]=="Exito") {
+
+                $('#llave_clasificacion_lista').val(id);
+                $('#ingreso_datos').val("si_actualizalo");
+                $('#nombre').val(json[2]['nombre']);
+                $('#md_registrar_clasificacion_lista').modal('show');
+            }
+
+        }).fail(function(){
+
+        }).always(function(){
+
+        });
+
+
+    });
+
     $(document).on("click","#registrar_clasificacion_lista",function(e){
         e.preventDefault();
         //console.log("Capturando evento");
