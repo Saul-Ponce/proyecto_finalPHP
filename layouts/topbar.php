@@ -58,7 +58,7 @@ if (isset($_SESSION['logueado']) && $_SESSION['logueado']=="si") {
                 </button>
             </li>
             <li class="hide-phone list-inline-item app-search">
-                <h3 class="page-title"><?php print $_GET['modulo'] ?></h3>
+                <h3 class="page-title"><?php print (isset($_GET['modulo']) ? $_GET['modulo']:""); ?></h3>
             </li>
         </ul>
 

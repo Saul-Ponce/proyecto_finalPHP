@@ -14,7 +14,7 @@ class Conexion
      * Única instancia de la clase
      */
     private static $db = null;
-
+    
     /**
      * Instancia de PDO
      */
@@ -52,8 +52,8 @@ class Conexion
     public function getDb()
     {
         //  $c = new PDO( "sqlsrv:Server=(local) ; Database = AdventureWorks ", "", "", array(PDO::SQLSRV_ATTR_DIRECT_QUERY => true));
-        //
-        //
+        //  
+        //  
         if (self::$pdo == null) {
             self::$pdo = new PDO(
                 'mysql:dbname=' . DATABASE .
