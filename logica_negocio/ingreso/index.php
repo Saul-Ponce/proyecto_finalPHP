@@ -19,29 +19,32 @@
 
             <div class="p-3">
                 <h4 class="font-18 m-b-5 text-center">Bienvenido</h4>
-                <p class="text-muted text-center">Para iniciar ingrese sus credenciales</p>
+                <p class="text-muted text-center">Ingrese sus credenciales</p>
 
-                <form id="formulario_login" class="form-horizontal m-t-30" action="index.php">
+                <form class="form-horizontal m-t-30" action="index.php" id="formulario_login">
 
                     <div class="form-group">
-                        <label for="correo">Correo o usuario</label>
-                        <input type="text" autocomplete="off" name="correo" class="form-control" id="correo" placeholder="Ingrese su correo">
+                        <label for="correo">Correo</label>
+                        <input autocomplete="off" type="text" name="correo" class="form-control" id="correo" placeholder="Ingrese su correo">
                     </div>
 
                     <div class="form-group">
-                        <label for="contra">Contraseña</label>
-                        <input type="password" name="contra" class="form-control" id="contra" placeholder="Ingrese su contraseña">
+                        <label for="userpassword">Contraseña</label>
+                        <input type="password" class="form-control" name="contrasena" id="contrasena" placeholder="Ingrese su contraseña">
                     </div>
 
                     <div class="form-group row m-t-20">
+                        <div class="col-sm-6">
+
+                        </div>
                         <div class="col-sm-6 text-right">
-                            <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Log In</button>
+                            <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Ingresar</button>
                         </div>
                     </div>
 
                     <div class="form-group m-t-10 mb-0 row">
                         <div class="col-12 m-t-20">
-                            <a href="javascript.void(0)" class="text-muted"><i class="mdi mdi-lock"></i> Recuperar tu contraseña</a>
+                            <a href="recuperar_passsword.php" class="text-muted"><i class="mdi mdi-lock"></i> Recuperar contraseña</a>
                         </div>
                     </div>
                 </form>
@@ -50,13 +53,15 @@
         </div>
     </div>
 
+
+
 </div>
 
 <?php include '../../layouts/footerScript.php'; ?>
 
 <!-- App js -->
 <script src="../../public/assets/js/app.js"></script>
-<script src="funciones_ingreso.js"></script>
+<script src="funciones_ingreso.js" type="text/javascript" charset="utf-8" ></script>
 
 </body>
 </html>

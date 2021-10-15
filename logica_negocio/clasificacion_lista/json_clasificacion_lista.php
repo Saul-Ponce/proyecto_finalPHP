@@ -86,7 +86,6 @@ else if (isset($_POST['consultar_datos']) && $_POST['consultar_datos']=="si_cons
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                             <a data-id="'.$row['id'].'" class="dropdown-item btn_editar" href="javascript:void(0)">Editar</a>
                                             <a data-id="'.$row['id'].'" class="dropdown-item btn_eliminar" href="javascript:void(0)">Eliminar</a>
-                                            <a data-id="'.$row['id'].'" class="dropdown-item btn_recuperar_pass" href="javascript:void(0)">Recuperar Contraseña</a>
                                         </div>
                                     </div>
 </td>
