@@ -15,19 +15,14 @@
                     <a href="../home/?modulo=HOME" class="waves-effect"><i class="mdi mdi-home"></i><span> Home </span></a>
                 </li>
 
-                <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-cube-outline"></i><span> Lista de tareas <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span> </span></a>
-                    <ul class="list-unstyled">
-                        <li><a href="email-inbox.php">Nuevo Producto</a></li>
-                        <li><a href="email-read.php">Administrar Producto</a></li>
-
-                    </ul>
+                <li>
+                    <a href="../lista_tareas/?modulo=LISTA DE TAREAS" class="waves-effect"><i class="mdi mdi-playlist-check"></i><span> Lista de tareas</span></a>
                 </li>
                 <li>
-                    <a href="../clasificacion_lista/?modulo=CLASIFICACIONES" class="waves-effect"><i class="mdi mdi-cube-outline"></i><span> Clasificacion tareas </span></a>
+                    <a href="../clasificacion_lista/?modulo=CLASIFICACIONES DE TAREAS" class="waves-effect"><i class="mdi mdi-book-multiple-variant"></i><span> Clasificacion de tareas</span></a>
                 </li>
                 <li>
-                    <a href="../usuarios/?modulo=USUARIOS" class="waves-effect"><i class="mdi mdi-cube-outline"></i><span> Usuarios </span></a>
+                    <a href="../usuarios/?modulo=USUARIOS" class="waves-effect"><i class="mdi mdi-account-circle"></i><span> Usuarios </span></a>
                 </li>
 
             </ul>

@@ -1,14 +1,15 @@
 <?php include '../../layouts/header.php'; ?>
 <!-- C3 charts css -->
-<link href="../../public/plugins/c3/c3.min.css" rel="stylesheet" type="text/css" />
-<link href="../../public/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+<link href="../../public/plugins/c3/c3.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../public/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css"/>
 <link href="../../public/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
 <?php include '../../layouts/headerStyle.php'; ?>
 <style>
 
-    div#registrar_clasificacion_lista {
+    div#registrar_lista_tareas {
         cursor: pointer;
     }
+
     .error_modificado li.parsley-required {
         position: absolute;
         margin-top: 42px;
@@ -41,44 +42,41 @@
                 <div class="container-fluid">
 
                     <div class="row">
-                        <div class="col-md-6 col-xl-6" >
+                        <div class="col-md-6 col-xl-6">
                             <div class="mini-stat clearfix bg-white">
-                                <span class="mini-stat-icon bg-purple mr-0 float-right"><i class="mdi mdi-book-multiple"></i></span>
+                                <span class="mini-stat-icon bg-purple mr-0 float-right"><i
+                                            class="mdi mdi-playlist-check"></i></span>
                                 <div class="mini-stat-info">
-                                    <span class="counter text-purple" id="cantidad_clasificacion_lista">25140</span>
-                                    Clasificaciones de lista de tareas registradas
+                                    <span class="counter text-purple" id="cantidad_lista_tareas">25140</span>
+                                    Lista de tareas registradas
                                 </div>
                                 <div class="clearfix"></div>
 
                             </div>
                         </div>
-                        <div class="col-md-6 col-xl-6" id="registrar_clasificacion_lista">
+                        <div class="col-md-6 col-xl-6" id="registrar_lista_tareas">
                             <div class="mini-stat clearfix bg-white">
-                                <span class="mini-stat-icon bg-blue-grey mr-0 float-right"><i class="mdi mdi-book-plus"></i></span>
+                                <span class="mini-stat-icon bg-blue-grey mr-0 float-right"><i
+                                            class="mdi mdi-playlist-plus"></i></span>
                                 <div class="mini-stat-info">
                                     <span class="counter text-blue-grey">Registrar</span>
-                                    Nueva Clasificaicon
+                                    Nueva Lista de tareas
                                 </div>
                                 <div class="clearfix"></div>
-
                             </div>
                         </div>
 
                     </div>
-
                     <div class="row">
                         <div class="col-12">
                             <div class="card m-b-20">
-                                <div class="card-body">
-                                    <div id="aqui_tabla">
-                                    </div>
+                                <div class="card-body" id="datos_tabla">
+
+
                                 </div>
                             </div>
                         </div>
                     </div> <!-- end row -->
-
-
-
 
 
                 </div><!-- container -->
@@ -91,34 +89,62 @@
 
         <!-- aca las modales-->
 
-        <div class="modal fade" id="md_registrar_clasificacion_lista" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="md_registrar_clasificacion_lista" tabindex="-1" role="dialog"
+             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Registro nueva clasificacion</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Registro nueva lista de tareas</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body mx-auto">
-
                         <form name="formulario_registro" id="formulario_registro">
-                            <input type="hidden" id="ingreso_datos" name="ingreso_datos" value="si_registro">
-                            <input type="hidden" id="llave_clasificacion_lista" name="llave_clasificacion_lista" value="si_registro">
-                            <div class="row">
-                                    <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label">Nombre</label>
-                                        <div class="col-sm-10">
-                                        <input type="text" autocomplete="off" name="nombre" data-parsley-required-message="El nombre es requerido" id="nombre" class="form-control ml-2" required placeholder="Ingrese su nombre"/>
-                                        </div>
-                                    </div>
+                            <input type="hidden" id="ingreso_datos" name="ingreso_datos"
+                                   value="si_registro">
+                            <input type="hidden" id="llave_clasificacion_lista"
+                                   name="llave_clasificacion_lista" value="si_registro">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Titulo</label>
+                                    <input type="text" autocomplete="off" name="titulo" data-parsley-required-message="Campo  requerido" id="titulo" class="form-control" required placeholder="Ingrese su titulo"/>
+                                </div>
                             </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Clasificacion</label>
+                                    <select id="depto" name="depto" class="form-control select2">
 
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Persona</label>
+                                    <select id="depto" name="depto" class="form-control select2">
 
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="form-group row">
+                                    <div class="col-sm-10">
+                                        <input type="text" autocomplete="off" name="nombre"
+                                               data-parsley-required-message="El nombre es requerido"
+                                               id="nombre" class="form-control mr-2"
+                                               required
+                                               placeholder="Introduzca la tarea para agregarla a la lista"/>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary col-sm-2">
+                                        agregar
+                                    </button>
+                                </div>
+                            </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                        <button type="submit"  class="btn btn-primary">Guardar</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
                         </form>
                     </div>
                 </div>
@@ -174,7 +200,7 @@
 
 
 <script type="text/javascript" src="../../public/plugins/parsleyjs/parsley.min.js"></script>
-<script src="funciones_clasificacion_lista.js"></script>
+<script src="funciones_lista_tareas.js"></script>
 </body>
 </html>
 
